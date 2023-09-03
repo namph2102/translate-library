@@ -45,6 +45,11 @@ translateHaveSound("i find my love", "en")
 
 //Ex2 ->translateHaveSound return Promise
 
+translateHaveSound("i find my love", "vi")
+.then(console.log)
+.catch(console.error);
+
+->😊😊 Result
 {
   sound: 'https://drive.google.com/uc?id=1BN01JNUrsPFO1poZaDjcv6QEYuSgbQQS',
   idSound: '1BN01JNUrsPFO1poZaDjcv6QEYuSgbQQS',
