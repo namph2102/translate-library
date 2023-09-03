@@ -16,6 +16,7 @@ You can install the `translate-audio` library using npm:
 - translateHaveSound
 - translate
 - translateExactly
+- Use Sound audio
 
 ### Usage
 
@@ -101,6 +102,23 @@ translateExactly("học sinh", { from: "vi", to: "en" })
   lang: 'vi',
   statusCode: 200
 }
+```
+
+#### How to use sound in audio tag ??
+
+```
+- HTML AUDIO>
+ <audio controls>
+    <source
+      type="audio/ogg"
+      src="https://drive.google.com/uc?id=1FRlMb51QHpmwjmKLmIDpZmgjvFy-B66k"
+    />
+    <source
+      type="audio/mpeg"
+      src="https://drive.google.com/uc?id=1FRlMb51QHpmwjmKLmIDpZmgjvFy-B66k"
+   />
+     Your browser does not support the audio tag.
+ </audio>
 ```
 
 #### Thanks for using my library
