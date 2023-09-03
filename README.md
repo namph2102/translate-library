@@ -13,10 +13,10 @@ You can install the `translate-audio` library using npm:
 
 ## Features
 
-- translateHaveSound
-- translate
-- translateExactly
-- Use Sound audio
+- [translateHaveSound](#translateHaveSound)
+- [translate](#translate)
+- [translateExactly](#translateExactly)
+- [Use Sound audio](#how-to-use-sound-in-audio-tag)
 
 ### Usage
 
@@ -104,7 +104,7 @@ translateExactly("học sinh", { from: "vi", to: "en" })
 }
 ```
 
-#### How to use sound in audio tag ??
+#### How to use sound in audio tag
 
 ```
 - HTML AUDIO>
