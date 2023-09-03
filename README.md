@@ -94,12 +94,12 @@ translateExactly("học sinh", { from: "vi", to: "en" })
 
 ->😊😊 Result
 {
-  vocab: 'contact',
-  vocab_translate: 'liên hệ',
+  vocab: 'học sinh',
+  vocab_translate: 'pupil',
   sound: null,
   idSound: null,
-  country: 'Vietnamese',
-  lang: 'vi',
+  country: 'English',
+  lang: 'en',
   statusCode: 200
 }
 ```

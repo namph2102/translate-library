@@ -5,4 +5,5 @@ import {
 } from "./package/translate";
 
 export { translate, translateExactly, translateHaveSound };
+
 export default translate;
