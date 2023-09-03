@@ -1,0 +1,28 @@
+{
+  "name": "translate-audio",
+  "version": "1.0.2",
+  "description": "translate-audio helps you translate multiple languages and create audio for that language",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "prepare": "npm run build",
+  "repository": "https://github.com/namph2102/translatelibrary/tree/main/reactTranslate",
+  "readme": "https://github.com/namph2102/translatelibrary/blob/main/reactTranslate/README.md",
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "babel index.js -d dist"
+  },
+  "keywords": [
+    "translate-api-free",
+    "translate-voice",
+    "translate-language",
+    "translate-word"
+  ],
+  "author": "Phạm Hoài Nam <namph2102@gmail.com>",
+  "license": "ISC",
+  "directories": {
+    "lib": "lib"
+  },
+  "include": [
+    "src"
+  ]
+}
