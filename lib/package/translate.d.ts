@@ -4,7 +4,7 @@ declare enum DOMAIN {
 }
 export declare const DOMAIN_SERVER = DOMAIN.HOST_REAL;
 import { langs } from "../type/translate.type";
-type LangKey = keyof typeof langs;
+export type LangKey = keyof typeof langs;
 /**
  *  translate will return data translate
  * @param word  word is first parameter
@@ -47,4 +47,22 @@ export declare const translateExactly: (word: string | number, tranObj: {
           statusCode}
  */
 export declare const translateHaveSound: (word: string | number, lang: LangKey) => Promise<any>;
+/**
+ *  translateHaveSound will return data translate
+ * @param word  word is first parameter
+ * @param tranObj   tranObj {from:"",to:""} key 'from'  you need to specify the input language, it will help you render sound itself | key 'to' is  language to translate
+ * @returns its will render sound's word, follow key 'from'
+ * Promise   {sound,
+          vocab,
+          vocab_translate,
+          lang,
+          country,
+          lang_current,
+          country_current,
+          statusCode}
+ */
+export declare const translateHaveSoundWithCurrent: (word: string | number, tranObj: {
+    from: LangKey;
+    to: LangKey;
+}) => Promise<any>;
 export {};

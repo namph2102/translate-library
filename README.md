@@ -14,11 +14,22 @@ You can install the `translate-audio` library using npm:
 ## Features
 
 - [translateHaveSound](#translateHaveSound)
+- [translateHaveSoundWithCurrent](#translateHaveSoundWithCurrent)
 - [translate](#translate)
 - [translateExactly](#translateExactly)
 - [Use Sound audio](#how-to-use-sound-in-audio-tag)
 
 ### Usage
+
+```
+translate("student", "vi").then(console.log);
+translateExactly("student", { from: "en", to: "ja" }).then(console.log);
+translateHaveSound("học sinh", "en").then(console.log);
+translateHaveSoundWithCurrent("student", { from: "en", to: "ja" })
+.then(
+  console.log
+);
+```
 
 #### translateHaveSound
 
@@ -61,6 +72,51 @@ translateHaveSound("i find my love", "vi")
 }
 ```
 
+#### translateHaveSoundWithCurrent
+
+```
+import {translateHaveSoundWithCurrent} from "translate-audio";
+
+//Ex1 ->translateHaveSoundWithCurrent return Promise
+
+translateHaveSoundWithCurrent("student", { from: "en", to: "vi" })
+.then(console.log)
+.catch(console.error);
+
+
+->😊😊 Result
+{
+  sound: 'https://drive.google.com/uc?id=1rTlSyknoTfuxRQp5Ul5YI1eofGJDKYWL',
+  idSound: '1rTlSyknoTfuxRQp5Ul5YI1eofGJDKYWL',
+  vocab: 'student',
+  vocab_translate: 'học sinh',
+  lang: 'vi',
+  country: 'Việt Nam',
+  lang_current: 'en',
+  country_current: 'English',
+  statusCode: 200
+}
+
+//Ex2
+
+translateHaveSoundWithCurrent("student", { from: "en", to: "ja" })
+.then(console.log)
+.catch(console.error);
+
+->😊😊 Result
+{
+  sound: 'https://drive.google.com/uc?id=1dHLTAM2mTtgKbUIfW9SgXXURPv4WKt2F',
+  idSound: '1dHLTAM2mTtgKbUIfW9SgXXURPv4WKt2F',
+  vocab: 'student',
+  vocab_translate: '学生',
+  lang: 'ja',
+  country: 'Japanese',
+  lang_current: 'en',
+  country_current: 'English',
+  statusCode: 200
+}
+```
+
 #### translate
 
 ```
@@ -77,8 +133,6 @@ translate("contact", "vi")
 {
   vocab: 'học sinh',
   vocab_translate: 'pupil',
-  sound: null,
-  idSound: null,
   country: 'English',
   lang: 'en',
   statusCode: 200
@@ -92,19 +146,19 @@ import {translateExactly} from "translate-audio";
 
 ->⚡translateExactly return Promise
 
-translateExactly("học sinh", { from: "vi", to: "en" })
+translateExactly("học sinh", { from: "vi", to: "uk" })
 .then(console.log)
 .catch(console.error);
 
 
 ->😊😊 Result
 {
-  vocab: 'học sinh',
-  vocab_translate: 'pupil',
-  sound: null,
-  idSound: null,
-  country: 'English',
-  lang: 'en',
+  vocab: "học sinh",
+  vocab_translate: "учень",
+  lang: "uk",
+  country: "Ukrainian",
+  lang_current: "vi",
+  country_current: "Việt Nam",
   statusCode: 200
 }
 ```

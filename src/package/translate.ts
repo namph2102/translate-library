@@ -6,12 +6,12 @@ enum DOMAIN {
 export const DOMAIN_SERVER = DOMAIN.HOST_REAL;
 import { langs } from "../type/translate.type";
 
-type LangKey = keyof typeof langs;
+export type LangKey = keyof typeof langs;
 enum API_TRANSLATE {
   TRANSLATE = DOMAIN_SERVER + "/api/create/translate",
   TRANSLATE_EXACTLY = DOMAIN_SERVER + "/api/create/translate/exactly",
-
   TRANSLATE_VOICES = DOMAIN_SERVER + "/api/create/sound",
+  TRANSLATE_VOICES_CURRENT = DOMAIN_SERVER + "/api/create/current",
 }
 /**
  *  translate will return data translate
@@ -71,5 +71,30 @@ export const translateHaveSound = (word: string | number, lang: LangKey) => {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ message: word, lang: lang }),
+  }).then((res) => res.json());
+};
+
+/**
+ *  translateHaveSound will return data translate
+ * @param word  word is first parameter 
+ * @param tranObj   tranObj {from:"",to:""} key 'from'  you need to specify the input language, it will help you render sound itself | key 'to' is  language to translate
+ * @returns its will render sound's word, follow key 'from'  
+ * Promise   {sound,
+          vocab,
+          vocab_translate,
+          lang,
+          country,
+          lang_current,
+          country_current,
+          statusCode}
+ */
+export const translateHaveSoundWithCurrent = (
+  word: string | number,
+  tranObj: { from: LangKey; to: LangKey }
+) => {
+  return fetch(API_TRANSLATE.TRANSLATE_VOICES_CURRENT, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ message: word, from: tranObj.from, to: tranObj.to }),
   }).then((res) => res.json());
 };
